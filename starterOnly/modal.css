@@ -35,10 +35,10 @@ img {
   margin: 3.5%;
 }
 .header-logo {
-    float: left;
+  float: left;
 }
 .main-navbar {
-    float: right;
+  float: right;
 }
 .topnav a {
   float: left;
@@ -67,17 +67,100 @@ img {
 .topnav .icon {
   display: none;
 }
+.form-error {
+  padding: 0;
+  margin-top: 5px;
+  font-weight: 400;
+}
+/*@media screen and (max-width: 768px) {
+  .main {
+    padding: 0;
+  }
+  .header-logo img {
+    transform: scale(0.5);
+    padding-right: 0;
+    margin-top: 15px;
+    margin-left: -45px;
+  }
+  .topnav a:hover {
+    background-color: #ffffff;
+    color: #ff0000;
+    border-radius: 15px;
+  }
 
-@media screen and (max-width: 768px) {
-  .topnav a {display: none;}
+  .topnav a.active {
+    background-color: #ff0000;
+    color: #ffffff;
+    border-radius: 15px;
+  }
+  .topnav a.icon {
+    color: #ff0000;
+  }
+  .topnav a.icon:hover {
+    color: black;
+  }
+  .icon i {
+    margin-top: 35px;
+  }
+  .hero-content {
+    padding: 0;
+  }
+  .hero-section {
+    margin-top: 0;
+    padding-bottom: 0;
+  }
+  .hero-section h1 {
+    font-size: 40px;
+    font-weight: bold;
+  }
+  .hero-section p {
+    font-size: 13px;
+    margin-top: 20px;
+    width: 85%;
+  }
+  .hero-img img {
+    /**margin-top: 20;**/
+/* width: 100%;
+    height: 100%;
+    display: block;
+    padding: 0;
+  }
+  .btn-signup {
+    font-size: 14px;
+  }
+  .hero-section > .btn-signup {
+    font-size: 14px;
+    padding: 7px 45px;
+  }
+  .hero-section {
+    min-height: 52vh;
+  }
+  .topnav {
+    margin-top: 0;
+  }
+  .topnav a {
+    display: none;
+  }
   .topnav a.icon {
     float: right;
     display: block;
   }
-}
+  .copyrights {
+    font-size: 10px;
+    margin-top: 0px;
+  }
+  label {
+    font-size: 10px;
+  }
+  .text-control {
+    height: 50px;
+  }
+}*/
 
-@media screen and (max-width: 768px) {
-  .topnav.responsive {position: relative;}
+/*@media screen and (max-width: 768px) {
+  .topnav.responsive {
+    position: relative;
+  }
   .topnav.responsive .icon {
     position: absolute;
     right: 0;
@@ -88,18 +171,18 @@ img {
     display: block;
     text-align: left;
   }
-}
+}*/
 
-
-
- @media screen and (max-width: 540px) {
-  .topnav a {display: none;}
+@media screen and (max-width: 540px) {
+  .topnav a {
+    display: none;
+  }
   .topnav a.icon {
     float: right;
     display: block;
     margin-top: -15px;
   }
-} 
+}
 
 main {
   font-size: 130%;
@@ -111,8 +194,6 @@ main {
   margin: 1px 20px 15px;
   border-radius: 2rem;
   text-align: justify;
-
-
 }
 
 .modal-btn {
@@ -190,7 +271,7 @@ main {
 
 label {
   font-family: var(--font-default);
-  font-size: 17px;
+  font-size: 14px;
   font-weight: normal;
   display: inline-block;
   margin-bottom: 11px;
@@ -206,8 +287,34 @@ input {
   width: 100%;
   border-radius: 8px;
   font-size: 20px;
-  height: 48px;
+  height: 64px;
 }
+.successContainer {
+  display: none;
+  font-weight: lighter;
+  text-align: center;
+  font-size: 1.5em;
+  color: white;
+  height: 830px;
+  padding-top: 350px;
+}
+.btn-close {
+  display: none;
+  background: #fe142f;
+  margin: 0 auto;
+  border-radius: 7px;
+  font-size: 1.3rem;
+  padding: 12px 98px;
+  color: #fff;
+  cursor: pointer;
+  border: 0;
+}
+
+.form-error {
+  font-size: 10px;
+  color: #e54858;
+}
+
 .formData[data-error]::after {
   content: attr(data-error);
   font-size: 0.4em;
@@ -226,12 +333,12 @@ input {
 .formData[data-error-visible="true"] .text-control {
   border: 2px solid #e54858;
 }
-/* 
+
 input[data-error]::after {
-    content: attr(data-error);
-    font-size: 0.4em;
-    color: red;
-} */
+  content: attr(data-error);
+  font-size: 0.4em;
+  color: red;
+}
 .checkbox-label,
 .checkbox2-label {
   position: relative;
@@ -327,7 +434,7 @@ input[data-error]::after {
   display: block;
   margin: 0 auto;
   border-radius: 7px;
-  font-size: 1rem;
+  font-size: 1.3rem;
   padding: 12px 82px;
   color: #fff;
   cursor: pointer;
@@ -402,10 +509,10 @@ input[data-error]::after {
 /* custom select end */
 .text-label {
   font-weight: normal;
-  font-size: 16px;
+  font-size: 14px;
 }
 .hero-section {
-  min-height: 93vh;
+  /* min-height: 93vh;*/
   border-radius: 10px;
   display: grid;
   grid-template-columns: repeat(12, 1fr);
@@ -449,7 +556,7 @@ input[data-error]::after {
 .btn-signup {
   outline: none;
   text-transform: capitalize;
-  font-size: 1.3rem;
+  /**font-size: 1.3rem;**/
   padding: 15px 23px;
   margin: 0;
   margin-top: 59px;
@@ -474,7 +581,7 @@ input[data-error]::after {
   display: none;
 }
 footer {
-  padding-left: 2vw;
+  /*padding-left: 2vw;*/
   padding-right: 2vw;
   margin: 0 20px;
 }
@@ -486,7 +593,8 @@ footer {
   .hero-content {
     background: #fff;
     color: #000;
-    padding: 20px;
+    /**padding: 20px;**/
+    padding: 0px 0px;
   }
   .hero-content::after {
     content: unset;
@@ -509,14 +617,121 @@ footer {
   .hero-section > .btn-signup {
     display: block;
     margin: 32px auto 10px;
-    padding: 12px 35px;
+    /*padding: 12px 35px;*/
   }
   .copyrights {
-    margin-top: 50px;
+    /* margin-top: 50px;*/
     text-align: center;
   }
 }
+@media screen and (max-width: 768px) {
+  .main {
+    padding: 0;
+  }
+  .header-logo img {
+    width: 103px;
+    height: 19px;
+    padding-right: 0;
+    margin-top: 35px;
+    margin-left: 15px;
+  }
+  .topnav a:hover {
+    background-color: #ffffff;
+    color: #ff0000;
+    border-radius: 15px;
+  }
 
+  .topnav a.active {
+    background-color: #ff0000;
+    color: #ffffff;
+    border-radius: 15px;
+  }
+  .topnav a.icon {
+    color: #ff0000;
+  }
+  .topnav a.icon:hover {
+    color: black;
+  }
+  .topnav {
+    margin-bottom: 5px;
+  }
+  .icon i {
+    position: absolute;
+  }
+  .topnav.responsive .icon {
+    position: absolute;
+    right: 15px;
+    top: 54px;
+  }
+  .topnav.responsive a {
+    float: none;
+    display: block;
+    text-align: left;
+  }
+  .hero-content {
+    padding: 0;
+  }
+  .hero-section {
+    margin-top: 0;
+    padding-bottom: 0;
+  }
+  .hero-section h1 {
+    font-size: 40px;
+    font-weight: bold;
+  }
+  .hero-section p {
+    font-size: 13px;
+    margin-top: 20px;
+    width: 85%;
+  }
+  .hero-img img {
+    /*margin-top: 20;**/
+    width: 100%;
+    height: 100%;
+    display: block;
+    padding: 0;
+  }
+  .content {
+    margin-top: 75px;
+  }
+  .bground {
+    background-color: rgba(253, 249, 249, 0.1);
+  }
+  .btn-signup {
+    font-size: 14px;
+  }
+  .hero-section > .btn-signup {
+    font-size: 14px;
+    padding: 7px 45px;
+  }
+  .hero-section {
+    min-height: 52vh;
+  }
+  /* .topnav {
+    margin-top: 0;
+  }
+  .topnav a {
+    display: none;
+  }
+  .topnav a.icon {
+    float: right;
+    display: block;
+  }*/
+  .copyrights {
+    font-size: 10px;
+    margin-top: 0px;
+  }
+  label {
+    font-size: 14px;
+  }
+  .text-control {
+    height: 50px;
+  }
+  .main-navbar {
+    width: 300px;
+    margin-top: -20px;
+  }
+}
 @keyframes modalopen {
   from {
     opacity: 0;
@@ -526,4 +741,3 @@ footer {
     opacity: 1;
   }
 }
-
