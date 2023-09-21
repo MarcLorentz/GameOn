@@ -10,26 +10,29 @@ function editNav() {
 // DOM Elements
 const modalbg = document.querySelector(".bground");
 const modalBtn = document.querySelectorAll(".modal-btn");
+const modalBody = document.querySelector(".modal-body");
+const modalContent = document.querySelector(".content");
 // launch modal event
 modalBtn.forEach((btn) => btn.addEventListener("click", launchModal));
 
 // launch modal form
+const successMessage = document.getElementById("successContainer");
 function launchModal() {
   modalbg.style.display = "block";
+  successMessage.style.display = "none";
+  closeModale.style.display = "none";
 }
 
 const closeButton = document.querySelector(".close");
-
+const closeModale = document.querySelector(".btn-close");
 closeButton.addEventListener("click", function () {
   modalbg.style.display = "none";
 });
-//const formData = document.querySelectorAll(".formData");
+
 const form = document.querySelector("form");
 
 form.addEventListener("submit", function (e) {
   let success = document.getElementById("successContainer");
-  //let myInput = document.querySelector(".btn-submit");
-  //let formTxt = document.querySelector(".bground");
 
   e.preventDefault();
   let isValid = true;
@@ -49,15 +52,6 @@ form.addEventListener("submit", function (e) {
   const errorNumber = document.getElementById("number-error");
   const errorLocation = document.getElementById("location-error");
   const errorAgreement = document.getElementById("agreement-error");
-
-  console.log(firstName.value);
-  console.log(lastName.value);
-  console.log(email.value);
-  console.log(birthDate.value);
-  console.log(tournamentNumber.value);
-  //console.log(radioValue.value);
-  console.log(mentionsAgreement.checked);
-  //console.log(wishAgreement.checked);
 
   //error firstName
   if (firstName.value.length <= 2) {
@@ -94,8 +88,12 @@ form.addEventListener("submit", function (e) {
   }
 
   //errorTournament
-  if (!tournamentNumber.value) {
-    errorNumber.innerText = "Vous devez sélectionner un chiffre.";
+  var tournamentformat = /^(0?[0-9]|[1-9][0-9])$/;
+  //if (!tournamentNumber.value) {
+  if (tournamentNumber.value.match(tournamentformat)) {
+    isValid = true;
+  } else {
+    errorNumber.innerText = "Entrez un chiffre compris entre 0 et 99.";
     isValid = false;
   }
 
@@ -131,8 +129,7 @@ form.addEventListener("submit", function (e) {
 
   console.log(isValid);
 
-  const successMessage = document.getElementById("successContainer");
-  const closeModale = document.querySelector(".btn-close");
+  // const closeModale = document.querySelector(".btn-close");
   if (isValid === true) {
     form.style.display = "none";
     successMessage.style.display = "block";
@@ -140,5 +137,7 @@ form.addEventListener("submit", function (e) {
   }
   closeModale.addEventListener("click", function () {
     modalbg.style.display = "none";
+    modalBody.style.display = "none";
+    modalContent.style.display = "none";
   });
 });
